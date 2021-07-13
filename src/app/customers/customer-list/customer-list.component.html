@@ -1,0 +1,9 @@
+<h2>CUSTOMERS</h2>
+<!-- <ul class="customers">
+  <li *ngFor="let customer of customers$ | async" [class.selected]="customer.id === selectedId">
+    <a [routerLink]="['/customer', customer.id]">
+      <span class="badge">{{ customer.id }}</span>{{ customer.name }}
+    </a>
+  </li>
+</ul> -->
+<app-data-table [columns]="columns" [pager]="pager" (setPage)="setPage($event)"></app-data-table>

@@ -1,0 +1,19 @@
+<div class="alignment" *ngIf="pager.pages && pager.pages.length">
+  <div class="pagination">
+    <span [ngClass]="{disabled:pager.currentPage === 1}" (click)="selectPage(1)">
+      First
+    </span>
+    <span [ngClass]="{disabled:pager.currentPage === 1}" (click)="selectPage(pager.currentPage - 1)">
+      Previous
+    </span>
+    <span *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" (click)="selectPage(page)">
+      {{page}}
+    </span>
+    <span [ngClass]="{disabled:pager.currentPage === pager.totalPages}" (click)="selectPage(pager.currentPage + 1)">
+      Next
+    </span>
+    <span [ngClass]="{disabled:pager.currentPage === pager.totalPages}" (click)="selectPage(pager.totalPages)">
+      Last
+    </span>
+  </div>
+</div>
